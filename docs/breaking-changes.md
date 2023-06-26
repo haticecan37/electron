@@ -12,6 +12,12 @@ This document uses the following convention to categorize breaking changes:
 * **Deprecated:** An API was marked as deprecated. The API will continue to function, but will emit a deprecation warning, and will be removed in a future release.
 * **Removed:** An API or feature was removed, and is no longer supported by Electron.
 
+## Planned Breaking API Changes (28.0)
+
+### Removed: `ipcRenderer.sendTo()`
+
+The `ipcRenderer.sendTo()` API has been removed. It should be replaced by setting up a [`MessageChannel`](tutorial/message-ports.md#setting-up-a-messagechannel-between-two-renderers) between the renderers.
+
 ## Planned Breaking API Changes (27.0)
 
 ### Removed: macOS 10.13 / 10.14 support
