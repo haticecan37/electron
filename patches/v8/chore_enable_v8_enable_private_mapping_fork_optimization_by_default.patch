@@ -1,0 +1,22 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: deepak1556 <hop2deep@gmail.com>
+Date: Thu, 27 Jul 2023 14:37:10 +0900
+Subject: chore: enable v8_enable_private_mapping_fork_optimization by default
+ on linux
+
+Follow-up to https://chromium-review.googlesource.com/c/v8/v8/+/4602858
+Refs https://github.com/nodejs/node/pull/48523
+
+diff --git a/BUILD.gn b/BUILD.gn
+index b5c3ff7fd42c26e473b13538f739a5d2eac394e4..e3586c5abc8d99a17ad0e8a954a896baab2f8755 100644
+--- a/BUILD.gn
++++ b/BUILD.gn
+@@ -92,7 +92,7 @@ declare_args() {
+   # child process doesn't generally need to access.
+   #
+   # See v8:7381 for more details.
+-  v8_enable_private_mapping_fork_optimization = false
++  v8_enable_private_mapping_fork_optimization = is_linux
+ 
+   # Sets -dENABLE_HANDLE_ZAPPING.
+   v8_enable_handle_zapping = is_asan || is_debug
