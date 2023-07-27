@@ -14,5 +14,10 @@
     <includes>
       <include name="IDR_CONTENT_SHELL_DEVTOOLS_DISCOVERY_PAGE" file="${target_gen_dir}/shell_devtools_discovery_page.html" use_base_dir="false" type="BINDATA" />
     </includes>
+    <messages>
+      <message name="IDS_PRODUCT_NAME" desc="The Chromium application name" translateable="false">
+        Chromium
+      </message>
+    </messages>
   </release>
 </grit>
